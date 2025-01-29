@@ -8,6 +8,7 @@
         {
             InitializeComponent();
         }
+        //prueba1
 
         private void OnCounterClicked(object sender, EventArgs e)
         {
