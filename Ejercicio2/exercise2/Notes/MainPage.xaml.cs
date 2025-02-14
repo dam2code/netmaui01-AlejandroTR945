@@ -1,31 +1,31 @@
-﻿namespace Notes;
-
-public partial class MainPage : ContentPage
+﻿namespace Notes
 {
-    string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
-
-    public MainPage()
+    public partial class MainPage : ContentPage
     {
-        InitializeComponent();
+        string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
 
-        if (File.Exists(_fileName))
+        public MainPage()
         {
-            editor.Text = File.ReadAllText(_fileName);
+            InitializeComponent();
+
+            if (File.Exists(_fileName))
+            {
+                editor.Text = File.ReadAllText(_fileName);
+            }
         }
-    }
 
-    void OnSaveButtonClicked(object sender, EventArgs e)
-    {
-        File.WriteAllText(_fileName, editor.Text);
-    }
-
-    void OnDeleteButtonClicked(object sender, EventArgs e)
-    {
-        if (File.Exists(_fileName))
+        void OnSaveButtonClicked(object sender, EventArgs e)
         {
-            File.Delete(_fileName);
+            File.WriteAllText(_fileName, editor.Text);
         }
-        editor.Text = string.Empty;
+
+        void OnDeleteButtonClicked(object sender, EventArgs e)
+        {
+            if (File.Exists(_fileName))
+            {
+                File.Delete(_fileName);
+            }
+            editor.Text = string.Empty;
+        }
     }
 }
-
