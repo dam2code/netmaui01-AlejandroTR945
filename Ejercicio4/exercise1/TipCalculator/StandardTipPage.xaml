@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TipCalculator.StandardTipPage"
+             Title="Standard Tip">
+    //hola
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="bgColor">#C0C0C0</Color>
+            <Color x:Key="fgColor">#0000AD</Color>
+            <x:Double x:Key="fontSize">22</x:Double>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid x:Name ="LayoutRoot" BackgroundColor="{StaticResource bgColor}" Padding="10">
+        <!-- Left column = static labels -->
+        <Label x:Name="billLabel" Text="Bill" TextColor="{StaticResource fgColor}" FontSize="{StaticResource fontSize}" ... />
+        <Label x:Name="tipLabel" Text="Tip" TextColor="{StaticResource fgColor}" FontSize="{StaticResource fontSize}" ... />
+        <Label x:Name="totalLabel" Text="Total" TextColor="{StaticResource fgColor}" FontSize="{StaticResource fontSize}" ... />
+
+        <!-- Right column = user input and calculated-value output -->
+        <Entry ... />
+        <Label x:Name="tipOutput" Text="0.00" TextColor="{StaticResource fgColor}" FontSize="{StaticResource fontSize}" ... />
+        <Label x:Name="totalOutput" Text="0.00" TextColor="{StaticResource fgColor}" FontSize="{StaticResource fontSize}" ... />
+    </Grid>
+</ContentPage>
