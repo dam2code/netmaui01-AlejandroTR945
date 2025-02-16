@@ -16,8 +16,11 @@ public class MovieListViewModel: ObservableObject
 
     public ObservableCollection<MovieViewModel> Movies { get; set; }
 
-    public MovieListViewModel() =>
+    public MovieListViewModel()
+    {
         Movies = [];
+        DeleteMovieCommand = new Command<MovieViewModel>(DeleteMovie);
+    }
 
     public async Task RefreshMovies()
     {

@@ -1,8 +1,11 @@
+using System.Windows.Input;
+
 namespace MovieCatalog.Views;
 
 public partial class MoviesListPage : ContentPage
 {
-	public MoviesListPage()
+    public ICommand DeleteMovieCommand { get; private set; }
+    public MoviesListPage()
 	{
 		InitializeComponent();
 	}
@@ -12,10 +15,5 @@ public partial class MoviesListPage : ContentPage
         await Navigation.PushAsync(new Views.MovieDetailPage());
     }
 
-    private void MenuItem_Clicked(object sender, EventArgs e)
-    {
-        MenuItem menuItem = (MenuItem)sender;
-        ViewModels.MovieViewModel movie = (ViewModels.MovieViewModel)menuItem.BindingContext;
-        App.MainViewModel?.DeleteMovie(movie);
-    }
+
 }
